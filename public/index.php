@@ -1,3 +1,7 @@
+<?php
+include("../donnees.inc.php");
+include("../Alouette.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,6 +12,11 @@
 </head>
 
 <body>
+	<?php
+	include("../menu.inc.php");
+	include("../header.inc.php");
+	include("../footer.inc.php");
+	?>
 	<div id="app">
 		<header>Ma ritournelle</header>
 		<footer>Intégration Web 3</footer>

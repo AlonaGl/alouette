@@ -6,6 +6,9 @@ class Alouette {
 	 * @param string $qualite - La qualité que l'on donne à l'oiseau (gentille)
 	 * @return string
 	 */
+	static public function titre($oiseau, $qualite){
+		return $oiseau.', '.$qualite.' '.$oiseau;
+	}
 
 
 	/** Méthode chanson
@@ -17,6 +20,7 @@ class Alouette {
 	 * @uses strophe
 	 * @return string
 	 */
+
 	
 	
 	/** Méthode strophe
@@ -30,6 +34,14 @@ class Alouette {
 	 * @uses couplet
 	 * @return string
 	 */
+	static public function strophe($oiseau, $qualite, $action, $membre, $membresDits) {
+		$resultat = '';
+		$resultat .= '<div class="strophe">';
+		$resultat .= self::refrain($oiseau, $qualite, $action);
+		$resultat .= self::couplet($oiseau, $action, $membre, $membresDits);
+		$resultat .= '</div>';
+		return $resultat;
+	}
 	
 	
 	/** Méthode refrain
@@ -82,5 +94,10 @@ class Alouette {
 	 * @return string
 	 */
 
-
+	static public function actionMembre($action, $membre) {
+		$resultat = self::appelReponse('Je '.$action.' '.$membre);
+		return $resultat;
+	}
+	
+	
 }
